@@ -4,9 +4,9 @@ using System.IO;
 
 namespace keksikq9.Json
 {
-    public class JsonSavingSystem<T>
+    public static class JsonSavingSystem<T>
     {
-        public void Save(T savingObject, string path)
+        public static void Save(T savingObject, string path)
         {
             File.WriteAllText(path,
             JsonConvert.SerializeObject(savingObject, Formatting.Indented, new JsonSerializerSettings()
@@ -16,7 +16,7 @@ namespace keksikq9.Json
             ));
         }
 
-        public void SaveArray(T[] savingObjects, string path)
+        public static void SaveArray(T[] savingObjects, string path)
         {
             File.WriteAllText(path,
             JsonConvert.SerializeObject(savingObjects, Formatting.Indented, new JsonSerializerSettings()
@@ -26,7 +26,7 @@ namespace keksikq9.Json
             ));
         }
 
-        public void SaveList(List<T> savingObjects, string path)
+        public static void SaveList(List<T> savingObjects, string path)
         {
             File.WriteAllText(path,
             JsonConvert.SerializeObject(savingObjects, Formatting.Indented, new JsonSerializerSettings()
@@ -36,7 +36,7 @@ namespace keksikq9.Json
             ));
         }
 
-        public void SaveDictionary(Dictionary<T, T> savingObjects, string path)
+        public static void SaveDictionary(Dictionary<T, T> savingObjects, string path)
         {
             File.WriteAllText(path,
             JsonConvert.SerializeObject(savingObjects, Formatting.Indented, new JsonSerializerSettings()
@@ -46,22 +46,22 @@ namespace keksikq9.Json
             ));
         }
 
-        public T Load(string path)
+        public static T Load(string path)
         {
             return JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
         }
 
-        public T[] LoadArray(string path)
+        public static T[] LoadArray(string path)
         {
             return JsonConvert.DeserializeObject<T[]>(File.ReadAllText(path));
         }
 
-        public List<T> LoadList(string path)
+        public static List<T> LoadList(string path)
         {
             return JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(path));
         }
 
-        public Dictionary<T,T> LoadDictionary(string path)
+        public static Dictionary<T, T> LoadDictionary(string path)
         {
             return JsonConvert.DeserializeObject<Dictionary<T, T>>(File.ReadAllText(path));
         }
