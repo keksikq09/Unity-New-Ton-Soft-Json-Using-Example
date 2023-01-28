@@ -2,7 +2,7 @@
 
 How use?
 
-1. Download NewTonSoft.Json for unuty.
+1. Download NewTonSoft.Json for unity.
 
 -guide : https://github.com/jilleJr/Newtonsoft.Json-for-Unity/wiki/Install-official-via-UPM
 
